@@ -8,7 +8,7 @@ const INFO_MESSAGE =
   'Too many matches found. Please enter a more specific name.';
 const ERROR_MESSAGE = 'Oops, there is no country with that name';
 
-refs = {
+const refs = {
   countryList: document.querySelector('.country-list'),
   infoContainer: document.querySelector('.country-info'),
   searchField: document.getElementById('search-box'),
@@ -74,16 +74,16 @@ function createCountriesItemsMarcup(countries) {
 function renderCountriesList(countries) {
   const markup = countries
     .map(({ name, flags }) => {
-      return `<li class="country-item"><img class="country-img" src="${flags.svg}" alt="flag of ${name.official}" width="50"><p class="country-title">${name.official}</p></li>`;
+      `<li class="country-item"><img class="country-img" src="${flags.svg}" alt="flag of ${name.official}" width="50"><p class="country-title">${name.official}</p></li>`;
     })
     .join('');
-  refs.countryList.innerHTML = markup;
+  return (refs.countryList.innerHTML = markup);
 }
 
 function renderCountriesCard(countries) {
   const markup = countries
     .map(({ name, flags, capital, population, languages }) => {
-      return `<div class="country-card-box"><img class="country-card-svg"  src="${
+      `<div class="country-card-box"><img class="country-card-svg"  src="${
         flags.svg
       }"  alt="flag of ${
         name.official
@@ -94,11 +94,12 @@ function renderCountriesCard(countries) {
       )}</span></p>`;
     })
     .join('');
-  refs.infoContainer.innerHTML = markup;
+  return (refs.infoContainer.innerHTML = markup);
 }
 
 function cleanMarkup() {
   refs.countryList.innerHTML = '';
+  refs.infoContainer.innerHTML = '';
 }
 
 function onFetchError() {
