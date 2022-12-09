@@ -59,6 +59,7 @@ function createCountriesItemsMarcup(countries) {
     refs.countryList.innerHTML = '';
   }
 }
+
 function cleanMarkup() {
   refs.countryList.innerHTML = '';
   refs.infoContainer.innerHTML = '';
@@ -70,40 +71,42 @@ function onFetchError() {
 }
 
 // function createCountriesItemsMarcup(countries) {
-//   if (countries.length !== 1) {
+//   if (Number(countries.length) > 10) {
+//     Notify.info(INFO_MESSAGE);
+//     cleanMarkup();
+//   } else if (Number(countries.length) !== 1) {
 //     renderCountriesList(countries);
+//     refs.infoContainer.innerHTML = '';
 //   } else {
 //     renderCountriesCard(countries);
-//     if (countries.length > 10) {
-//       Notify.info(INFO_MESSAGE);
-//       cleanMarkup();
-//     }
+//     refs.countryList.innerHTML = '';
 //   }
 // }
 
 // function renderCountriesList(countries) {
 //   const markup = countries
 //     .map(({ name, flags }) => {
-//       `<li class="country-item"><img class="country-img" src="${flags.svg}" alt="flag of ${name.official}" width="50"><p class="country-title">${name.official}</p></li>`;
+//       return `<li class="country-item"><img class="country-img" src="${flags.svg}" alt="flag of ${name.official}" width="50"><p class="country-title">${name.official}</p></li>`;
 //     })
 //     .join('');
-//   refs.countryList.innerHTML = markup;
-//   console.log(markup);
+//   // refs.countryList.innerHTML = markup;
+//   refs.countryList.insertAdjacentElement('beforeend', markup);
 // }
 
 // function renderCountriesCard(countries) {
 //   const markup = countries
 //     .map(({ name, flags, capital, population, languages }) => {
-//       `<div class="country-card-box"><img class="country-card-svg"  src="${
+//       return `<div class="country-card"><div class="country-card-box"><img class="country-card-svg"  src="${
 //         flags.svg
 //       }"  alt="flag of ${
 //         name.official
-//       }" width="70"><p class="country-card-title">${
+//       }" width="70" heiht="100%"><p class="country-card-title">${
 //         name.official
 //       }</p></div><p class="country-card-text">Capital:<span class="country-card-topic">${capital}</span></p><p class="country-card-text">Population:<span class="country-card-topic">${population}</span></p><p class="country-card-text">Languages:<span class="country-card-topic">${Object.values(
 //         languages
-//       )}</span></p>`;
+//       )}</span></p></div>`;
 //     })
 //     .join('');
-//   refs.infoContainer.innerHTML = markup;
+//   // refs.infoContainer.innerHTML = markup;
+//   refs.infoContainer.insertAdjacentElement('beforeend', markup);
 // }
