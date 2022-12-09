@@ -10,11 +10,100 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  background: linear-gradient(
+    0deg,
+    rgba(229, 237, 89, 1) 20%,
+    rgba(0, 145, 195, 1) 85%
+  );
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
 }
 
 #search-box {
   font: inherit;
+  font-weight: bold;
   padding: 8px;
   max-width: 320px;
-  margin-bottom: 16px;
+  margin: 30px 0px 16px 20px;
+  border-radius: 8px;
+  border: 2px solid rgba(154, 167, 237, 0.4);
+  outline: none;
+  color: rgb(40, 62, 57);
+  background: radial-gradient(
+    circle,
+    rgba(237, 238, 174, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+
+.country-list {
+  list-style: none;
+  padding-left: 25px;
+}
+.country-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.country-img {
+  display: block;
+  margin-right: 10px;
+}
+.country-title {
+  font-size: 20px;
+  margin: 0;
+}
+.country-card {
+  backdrop-filter: blur(5px);
+  width: 400px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-image: radial-gradient(
+    circle,
+    rgba(9, 9, 121, 1) 13%,
+    rgba(0, 212, 255, 1) 71%,
+    rgba(2, 0, 36, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.country-card-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.country-card-svg {
+  display: block;
+  margin-right: 20px;
+}
+.country-card-title {
+  font-size: 30px;
+  margin: 0;
+  font-style: italic;
+  font-weight: bolder;
+  color: rgb(160, 176, 235);
+}
+.country-card-text {
+  padding: 0;
+  margin-top: 0;
+}
+.country-card-text:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+.country-card-topic {
+  margin-left: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(143, 147, 147);
+}
+.country-card {
 }
